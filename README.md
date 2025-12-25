@@ -2,38 +2,126 @@
 
 Real-time hand gesture recognition system for the game **Rock, Paper, Scissors, Lizard, Spock**, implemented using a **Convolutional Neural Network (CNN)** and a standard webcam.
 
-The project integrates computer vision, deep learning, and interactive game logic to perform real-time gesture classification.
+The project combines computer vision, deep learning, and interactive game logic to classify hand gestures in real time and play against a CPU opponent.
 
 ---
 
 ## Demo
-**Video demo:**  
+▶️ **Video demo:**  
 https://joanet27-root.github.io/assets/PiedraPapelTijeraLagartoSpock.mp4
 
 ---
 
-## Project Structure
+## Features
+- Real-time webcam inference using OpenCV  
+- CNN-based multi-class gesture classification (5 classes)  
+- Integrated data augmentation (rotation, zoom, flip)  
+- Interactive game logic with score tracking  
+- Visual feedback: ROI box, countdown, icons, and results  
 
+---
+
+## Tech Stack
+- Python  
+- TensorFlow / Keras  
+- OpenCV  
+- NumPy  
+- Matplotlib  
+- Scikit-learn  
+
+---
+
+## Requirements
+- Python 3.9+
+- Webcam
+
+---
+
+## Installation
+
+```bash
+git clone https://github.com/joanet27-root/PiedraPapelTijeraLagartoSpock.git
+cd PiedraPapelTijeraLagartoSpock
+python -m venv .venv
+source .venv/bin/activate      # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+---
+
+## Dataset Format
+
+The dataset is not included in the repository.  
+Expected directory structure:
+
+```text
+dataset/
+├── piedra/
+├── papel/
+├── tijera/
+├── lagarto/
+└── spock/
+```
+
+- Images are RGB
+- Automatically resized to **160 × 160**
+- Labels are inferred from folder names
+
+---
+
+## Training the Model
+
+```bash
+python src/main.py
+```
+
+This script:
+1. Loads and preprocesses the dataset  
+2. Trains the CNN  
+3. Evaluates performance on validation data  
+4. Saves the trained model  
+
+---
+
+## Running the Webcam Game
+
+```bash
+python src/webcam_demo.py
+```
+
+### Controls
+- **SPACE** — start a round  
+- **Mouse click** — restart / exit (game over)  
+- **Q** — quit application  
+
+---
+
+## Notes
+- Ensure stable lighting and keep your hand inside the ROI box.
+- If the webcam does not open, adjust `CAM_INDEX` in `src/webcam_demo.py`.
+
+---
+
+## Repository Structure
 ```text
 .
 ├── src/                    # Core application and ML pipeline
-│   ├── main.py             # Training + evaluation
-│   ├── webcam_demo.py      # Real-time webcam game
-│   ├── model_cnn.py        # CNN architecture
-│   ├── load_dataset.py     # Dataset loading
-│   ├── train.py            # Training logic
-│   ├── evaluate.py         # Evaluation metrics
-│   └── utils.py            # Plotting utilities
+│   ├── main.py
+│   ├── webcam_demo.py
+│   ├── model_cnn.py
+│   ├── load_dataset.py
+│   ├── train.py
+│   ├── evaluate.py
+│   └── utils.py
 │
 ├── tools/                  # Auxiliary scripts
-│   ├── captura_dataset.py  # Dataset capture tool
-│   └── inspect_dataset.py  # Dataset inspection
+│   ├── captura_dataset.py
+│   └── inspect_dataset.py
 │
-├── models/                 # Trained models (optional)
-│   └── cnn_gesture_model.keras
-│
-├── icons/                  # Gesture icons used in the game
-├── assets/                 # Media (video demo)
-├── class_names.json
+├── models/                 # Trained model (optional)
+├── icons/                  # Gesture icons
+├── assets/                 # Demo media
 ├── requirements.txt
 └── README.md
+```
+
