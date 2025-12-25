@@ -81,7 +81,7 @@ python src/webcam_demo.py
 ```
 
 ### Controls
--**3, 5 or 7 in cmd** - Select the number of rounds
+- **3, 5 or 7 in cmd** - Select the number of rounds
 - **SPACE** — start a round  
 - **Mouse click** — restart / exit (game over)  
 - **Q** — quit application  
