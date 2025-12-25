@@ -2,32 +2,13 @@
 
 Real-time hand gesture recognition system for the game **Rock, Paper, Scissors, Lizard, Spock**, implemented using a **Convolutional Neural Network (CNN)** and a standard webcam.
 
-The project combines computer vision, deep learning, and real-time interaction to classify hand gestures and play against a CPU opponent.
+The project integrates computer vision, deep learning, and interactive game logic to perform real-time gesture classification.
 
 ---
 
 ## Demo
-▶️ **Video demo:**  
+**Video demo:**  
 https://joanet27-root.github.io/assets/PiedraPapelTijeraLagartoSpock.mp4
-
----
-
-## Features
-- Real-time webcam inference using OpenCV
-- CNN-based multi-class gesture classification (5 classes)
-- Integrated data augmentation (rotation, zoom, flip)
-- Interactive game logic with score tracking
-- Visual feedback: ROI box, countdown, icons, and results
-
----
-
-## Tech Stack
-- Python  
-- TensorFlow / Keras  
-- OpenCV  
-- NumPy  
-- Matplotlib  
-- Scikit-learn  
 
 ---
 
@@ -35,14 +16,24 @@ https://joanet27-root.github.io/assets/PiedraPapelTijeraLagartoSpock.mp4
 
 ```text
 .
-├── main.py              # Training + evaluation pipeline
-├── webcam_demo.py       # Real-time webcam game
-├── model_cnn.py         # CNN architecture
-├── load_dataset.py      # Dataset loader
-├── train.py             # Training loop
-├── evaluate.py          # Evaluation and metrics
-├── utils.py             # Plotting utilities
-├── captura_dataset.py   # (Optional) Dataset capture tool
-├── inspect_dataset.py   # (Optional) Dataset inspection
-├── icons/               # Gesture icons
-└── assets/              # Demo media
+├── src/                    # Core application and ML pipeline
+│   ├── main.py             # Training + evaluation
+│   ├── webcam_demo.py      # Real-time webcam game
+│   ├── model_cnn.py        # CNN architecture
+│   ├── load_dataset.py     # Dataset loading
+│   ├── train.py            # Training logic
+│   ├── evaluate.py         # Evaluation metrics
+│   └── utils.py            # Plotting utilities
+│
+├── tools/                  # Auxiliary scripts
+│   ├── captura_dataset.py  # Dataset capture tool
+│   └── inspect_dataset.py  # Dataset inspection
+│
+├── models/                 # Trained models (optional)
+│   └── cnn_gesture_model.keras
+│
+├── icons/                  # Gesture icons used in the game
+├── assets/                 # Media (video demo)
+├── class_names.json
+├── requirements.txt
+└── README.md
