@@ -7,7 +7,7 @@ The project combines computer vision, deep learning, and interactive game logic 
 ---
 
 ## Demo
-▶️ **Video demo:**  
+**Video demo:**  
 https://joanet27-root.github.io/assets/PiedraPapelTijeraLagartoSpock.mp4
 
 ---
