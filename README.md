@@ -12,15 +12,6 @@ https://joanet27-root.github.io/assets/PiedraPapelTijeraLagartoSpock.mp4
 
 ---
 
-## Features
-- Real-time webcam inference using OpenCV  
-- CNN-based multi-class gesture classification (5 classes)  
-- Integrated data augmentation (rotation, zoom, flip)  
-- Interactive game logic with score tracking  
-- Visual feedback: ROI box, countdown, icons, and results  
-
----
-
 ## Tech Stack
 - Python  
 - TensorFlow / Keras  
